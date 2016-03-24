@@ -27,7 +27,7 @@
             <span flex></span>
         </div>
     </md-toolbar>
-    <table ng-hide="loading">
+    <!--<table ng-hide="loading">
         <thead>
             <tr>
                 <th>Via</th>
@@ -42,7 +42,32 @@
                 <td>{{data.CodiceVia}}</td>
             </tr>
         </tbody>
-    </table>
+    </table>-->
+
+    <md-card ng-hide="loading">
+        <md-table-container>
+            <table md-table>
+                <thead md-head>
+                <tr md-row>
+                    <th md-column><span>Via</span></th>
+                    <th md-column><span>Civico</span></th>
+                    <th md-column><span>Avvio attività</span></th>
+                    <th md-column><span>Durata attività</span></th>
+                    <th md-column><span>Descrizione merce</span></th>
+                </tr>
+                </thead>
+                <tbody md-body>
+                <tr md-row ng-repeat="data in json | limitTo: 1000">
+                    <td md-cell>{{data.Ubicazione}}</td>
+                    <td md-cell>{{data.Civico}}</td>
+                    <td md-cell>{{data.Data_avvio_primo_Proc}}</td>
+                    <td md-cell>{{data.durata_attivita_tipo}}</td>
+                    <td md-cell>{{data.des_merceologica_p}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </md-card>
     <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading">
         <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
     </div>

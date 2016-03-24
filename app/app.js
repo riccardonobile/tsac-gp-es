@@ -1,4 +1,4 @@
-var gpApp = angular.module('gpApp', ['ngMaterial']);
+var gpApp = angular.module('gpApp', ['ngMaterial', 'md.data.table']);
 
 gpApp.controller('homeController', ['$scope', '$http', function($scope, $http) {
     $scope.loading = true;

@@ -1,0 +1,20 @@
+{
+  "name": "tsac-gp-es",
+  "homepage": "https://github.com/riccardonobile/tsac-gp-es",
+  "authors": [
+    "Riccardo Nobile <riccardonobile96gmail.com>"
+  ],
+  "description": "TSAC - Primo esercizio gestione progetto",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.5.2",
+    "angular-material": "^1.0.6"
+  }
+}

@@ -2,27 +2,49 @@
 <html lang="en" ng-app="gpApp">
 <head>
     <meta charset="UTF-8">
-    <title>TSAC GP ES</title>
+    <title>TSAC GP ES01</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link type="text/css" rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+    <link href="bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
 
     <script type="text/javascript" src="app/app.js"></script>
-    <!--<script type="text/javascript" src="app/services/dataAccessService.js"></script>
-    <script type="text/javascript" src="app/controllers/mainController.js"></script>
-    <script type="text/javascript" src="app/controllers/homeController.js"></script>
-    <script type="text/javascript" src="app/controllers/detailsController.js"></script>
-    <script type="text/javascript" src="app/controllers/editController.js"></script>
-    <script type="text/javascript" src="app/controllers/insertController.js"></script>-->
 </head>
-<body>
-
+<body ng-controller="homeController">
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">
+            <h3>
+                <span>TSAC GP ES01</span>
+            </h3>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <table ng-hide="loading">
+        <thead>
+            <tr>
+                <th>Via</th>
+                <th>Civico</th>
+                <th>CodiceVia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in json | limitTo: 1000">
+                <td>{{data.Ubicazione}}</td>
+                <td>{{data.Civico}}</td>
+                <td>{{data.CodiceVia}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading">
+        <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
 </body>
 </html>
